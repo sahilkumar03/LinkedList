@@ -5,6 +5,16 @@
       int data;
       struct node *next;
     };
+bool findKey(int key,struct node*head)
+		{
+			if(head==NULL)
+			return false;
+			
+			if(head->data==key)
+			return true;
+			
+			return findKey(key,head->next);
+		}
     void insert(int data,struct node **head_ptr){
         if(*head_ptr==NULL)
         {
